@@ -1,7 +1,7 @@
 en:
   application:
     index:
-      title: List of DXRuby API
+      title: List of DXRuby/dxruby_sdl API
       class: Class
       method: Method
       comment: Comment

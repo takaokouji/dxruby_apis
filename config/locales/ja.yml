@@ -1,7 +1,7 @@
 ja:
   application:
     index:
-      title: DXRuby API一覧
+      title: DXRuby/dxruby_sdl API一覧
       class: クラス
       method: メソッド
       comment: コメント
