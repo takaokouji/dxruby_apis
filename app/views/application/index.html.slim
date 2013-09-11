@@ -1,49 +1,59 @@
-h1
+h2
   = t('.title')
 
-table
-  thead
-    tr
-      th
-        = t('.class')
-      th
-        = t('.method')
-      th Windows
-      th Mac
-      th Linux
-      th
-        = t('.comment')
-  tbody
-    - @dxruby_apis.each do |klass, methods|
-      - methods.each do |method, property|
-        - method = '#' + method if /^\./ !~ method
-        tr
-          td
-            = klass
-          td
-            - if property && property['status'].try(:downcase) == 'removed'
-              span.removed
-                = method
-            - else
-                = method
-            - if property && property['version']
-              span.version<
-                = property['version']
-          td
-            = t('.ok')
-          td
-            - if !property || !property['progress']
-              = t('.ng')
-            - elsif property['progress'].downcase == 'done'
-              = t('.ok')
-            - else
-              = t('.wip')
-          td
-            - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
-              = t('.ng')
-            - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
-              = t('.ok')
-            - else
-              = t('.wip')
-          td
-            = property ? property['comment'] : ''
+.table-responsive
+  table.table class="table-bordered table-hover"
+    thead
+      tr
+        th
+          = t('.class')
+        th
+          = t('.method')
+        th
+          | Windows
+          br
+          | <small>(DXRuby)</small>
+        th
+          | Mac
+          br
+          | <small>(dxruby_sdl)</small>
+        th
+          | Linux
+          br
+          | <small>(dxruby_sdl)</small>
+        th
+          = t('.comment')
+    tbody
+      - @dxruby_apis.each do |klass, methods|
+        - methods.each do |method, property|
+          - method = '#' + method if /^\./ !~ method
+          tr
+            td
+              = klass
+            td
+              - if property && property['status'].try(:downcase) == 'removed'
+                span.removed
+                  = method
+              - else
+                  = method
+              - if property && property['version']
+                span.version<
+                  = property['version']
+            td
+              = glyph('ok')
+            td
+              - if !property || !property['progress']
+                |
+              - elsif property['progress'].downcase == 'done'
+                = glyph('ok')
+              - else
+                = glyph('pause')
+            td
+              - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
+                |
+              - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+                = glyph('ok')
+              - else
+                = glyph('pause')
+            td
+              = property ? property['comment'] : ''
