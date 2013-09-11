@@ -16,10 +16,16 @@
 //= require turbolinks
 //= require_tree .
 
-function sendFeedback(type, methodName) {
+function sendFeedback(elem, type, methodName) {
   $.post(type,
          { method_name: methodName },
          function(data, textStatus, jqXHR) {
+           var e = $(elem).find('span.badge');
+           if (e.length > 0) {
+             $(elem).find('span.badge').html(data);
+           }
+           else {
+             $(elem).append(' <span class="badge">' + data + '</span>')
+           }
          });
 }
-

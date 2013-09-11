@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     else
       raise 'Method Not Found.'
     end
-    render json: { params[:method_name] => f.reload.up }
+    render json: f.reload.up
   end
 
   def down
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     else
       raise 'Method Not Found.'
     end
-    render json: { params[:method_name] => f.reload.down }
+    render json: f.reload.down
   end
 
   private
