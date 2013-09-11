@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
 
   def index
     @dxruby_apis = YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
+    @feedback = {}
+    Feedback.all.each do |f|
+      @feedback[f.method_name] = f
+    end
   end
 
   private

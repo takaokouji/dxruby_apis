@@ -71,14 +71,17 @@ h2
               - if completed
                 |
               - else
+                - method_name = klass + method
                 button.btn class="btn-xs btn-success" type="button"
                   = glyph('thumbs-up')
                   |  I want it!
-                  span.badge<
-                    | 10
+                  - if (count = @feedback[method_name].try(:up) || 0) > 0
+                    span.badge<
+                      = count
                 |　
                 button.btn< class="btn-xs btn-danger" type="button"
                   = glyph('thumbs-down')
                   |  No thanks.
-                  span.badge<
-                    | 5
+                  - if (count = @feedback[method_name].try(:down) || 0) > 0
+                    span.badge<
+                      = count
