@@ -15,3 +15,11 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+function sendFeedback(type, methodName) {
+  $.post(type,
+         { method_name: methodName },
+         function(data, textStatus, jqXHR) {
+         });
+}
+
