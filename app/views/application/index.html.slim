@@ -40,9 +40,11 @@ h2
                   = property['version']
             td
               = glyph('ok')
+            - completed = true
             td
               - if !property || !property['progress']
                 = progress(0)
+                - completed = false
               - elsif property['progress'].downcase == 'done'
                 = glyph('ok')
               - else
@@ -51,9 +53,11 @@ h2
                     = progress(50)
                 - else
                   = progress(50)
+                - completed = false
             td
               - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
                 = progress(0)
+                - completed = false
               - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
                 = glyph('ok')
               - else
@@ -62,5 +66,19 @@ h2
                     = progress(50)
                 - else
                   = progress(50)
+                - completed = false
             td
-              |
+              - if completed
+                |
+              - else
+                button.btn class="btn-xs btn-success" type="button"
+                  = glyph('thumbs-up')
+                  |  I want it!
+                  span.badge<
+                    | 10
+                |　
+                button.btn< class="btn-xs btn-danger" type="button"
+                  = glyph('thumbs-down')
+                  |  No thanks.
+                  span.badge<
+                    | 5
