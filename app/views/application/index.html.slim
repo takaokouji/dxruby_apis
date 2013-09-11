@@ -16,6 +16,7 @@ table
   tbody
     - @dxruby_apis.each do |klass, methods|
       - methods.each do |method, property|
+        - method = '#' + method if /^\./ !~ method
         tr
           td
             = klass

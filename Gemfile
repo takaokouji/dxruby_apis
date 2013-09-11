@@ -48,3 +48,4 @@ gem 'unicorn'
 
 gem 'rails_12factor', group: :production
 gem 'slim-rails'
+gem "twitter-bootstrap-rails"

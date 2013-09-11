@@ -140,3 +140,111 @@ Input:
     version: 1.4.0~
   .pad_pov_y:
     version: 1.4.0~
+
+Image:
+  .new:
+    progress: done
+  .load:
+    progress: wip
+    comment: x, y, width, height引数は未対応
+  .load_tiles:
+    version: 1.2.3~
+    aliases:
+      - .load_to_array
+      - .loadToArray
+    progress: done
+  .create_from_array:
+  .load_from_file_in_memery:
+  dispose:
+    version: 1.2.0~
+  delayed_dispose:
+    version: 1.2.1~
+    aliases:
+  disposed?:
+    version: 1.2.2~
+  '[]':
+  '[]=':
+  compare:
+    progress: done
+  line:
+    progress: done
+  box:
+    progress: done
+  box_fill:
+    progress: done
+  circle:
+    version: 1.2.2~
+    progress: done
+  circle_fill:
+    progress: done
+  triangle:
+    version: 1.2.3~
+  triangle_fill:
+    version: 1.2.3~
+  fill:
+  clear:
+    version: 1.2.3~
+  copy_rect:
+  draw:
+  draw_font:
+  draw_font_ex:
+    version: 1.2.1~
+  save:
+    version: 1.2.3~
+  slice:
+    version: 1.2.2~
+    progress: done
+  slice_tiles:
+    aliases:
+      - sliceToArray
+      - slice_to_array
+    version: 1.2.3~
+  dup:
+    aliases:
+      - clone
+  set_color_key:
+    progress: done
+  width:
+    progress: done
+  height:
+    progress: done
+  width=:
+    status: removed
+    version: ~1.2.2
+  height=:
+    status: removed
+    version: ~1.2.2
+  texture_x:
+    aliases:
+    status: removed
+    version: ~1.2.2
+  texture_x=:
+    aliases:
+    status: removed
+    version: ~1.2.2
+  texture_y:
+    aliases:
+    status: removed
+    version: ~1.2.2
+  texture_y=:
+    aliases:
+    status: removed
+    version: ~1.2.2
+
+Sound:
+  .new:
+
+SoundEffect:
+  .new:
+
+Font:
+  .new:
+
+RenderTarget:
+  .new:
+
+Shader:
+  .new:
+
+Sprite:
+  .new:
