@@ -1,0 +1,139 @@
+# DXRuby API一覧
+Window:
+  .loop:
+    progress: done
+  .draw:
+    progress: wip
+    comment: z引数は未対応
+  .draw_scale:
+  .draw_rot:
+  .draw_alpha:
+  .draw_add:
+  .draw_sub:
+  .draw_ex:
+    version: 1.2.3~
+  .draw_font:
+    progress: wip
+    comment: hash引数の:color以外は未対応
+  .draw_font_ex:
+    version: 1.2.1~
+  .draw_morph:
+    version: 1.2.0~
+  .set_viewport:
+    version: ~1.2.0
+    status: removed
+  .draw_tile:
+    version: 1.2.2~
+  .draw_line:
+    version: 1.2.3~
+  .get_screen_shot:
+  .get_load:
+  .open_filename:
+  .save_filename:
+  .create:
+  .sync:
+  .update:
+  .load_icon:
+  .hWnd:
+    aliases:
+  .x:
+  .y:
+  .x=:
+  .y=:
+  .width:
+    progress: done
+  .height:
+    progress: done
+  .width=:
+    progress: wip
+    comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
+  .height=:
+    progress: wip
+    comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
+  .caption:
+    progress: done
+  .caption=:
+    progress: done
+  .scale=:
+    progress: wip
+    comment: 設定内容が反映されない
+  .windowed?:
+  .windowed=:
+  .real_fps:
+  .fps:
+  .fps=:
+    progress: done
+  .frameskip?:
+  .frameskip=:
+  .bgcolor:
+  .bgcolor=:
+  .min_filter:
+  .mag_filter:
+  .min_filter=:
+  .mag_filter=:
+  .resize:
+  .active?:
+    .get_screen_modes:
+  .discard:
+    version: 1.2.2~
+  .decide:
+    version: 1.2.2~
+
+Input:
+  .x:
+    progress: wip
+    comment: ゲームパッドは未対応
+  .y:
+    progress: wip
+    comment: ゲームパッドは未対応
+  .key_down?:
+    progress: done
+  .key_push?:
+    progress: done
+  .pad_down?:
+    progress: done
+  .pad_push?:
+    progress: wip
+    comment: ゲームパッドのボタンを押した瞬間だけでなく、押されている間はtrueを返してしまう
+  .set_repeat:
+    progress: done
+  .set_key_repeat:
+  .set_pad_repeat:
+  .set_config:
+  .mouse_pos_x:
+    progress: done
+  .mouse_pos_y:
+    progress: done
+  .set_mouse_pos:
+  .mouse_down?:
+    progress: done
+  .mouse_push?:
+    progress: done
+  .mouse_wheel_pos:
+  .mouse_wheel_pos=:
+  .mouse_enable:
+  .keys:
+  .pads:
+  .update:
+  .pad_num:
+    version: 1.2.2~
+  .pad_axis:
+    version: 1.4.0~
+  .pad_lstick:
+    version: 1.4.0~
+  .pad_rstick:
+    version: 1.4.0~
+  .pad_pov:
+    version: 1.4.0~
+  .pad_lx:
+    version: 1.4.0~
+  .pad_ly:
+    version: 1.4.0~
+  .pad_rx:
+    version: 1.4.0~
+  .pad_ry:
+    version: 1.4.0~
+  .pad_pov_x:
+    version: 1.4.0~
+  .pad_pov_y:
+    version: 1.4.0~

@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    render text: "Hello World"
+    @dxruby_apis = YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
   end
 end
