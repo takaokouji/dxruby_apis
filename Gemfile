@@ -50,3 +50,7 @@ gem 'rails_12factor', group: :production
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails',
                                branch: 'bootstrap3'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
