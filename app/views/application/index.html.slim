@@ -25,7 +25,7 @@ h2
           span.label class="label-success"
             | dxruby_sdl
         th
-          = t('.comment')
+          = t('.feedback')
     tbody
       - tr_classes = ['success', 'warning', 'danger']
       - @dxruby_apis.each.with_index do |(klass, methods), i|
@@ -52,14 +52,21 @@ h2
               - elsif property['progress'].downcase == 'done'
                 = glyph('ok')
               - else
-                = progress(50)
+                - if property['comment'].present?
+                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}"
+                    = progress(50)
+                - else
+                  = progress(50)
             td
               - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
                 = progress(0)
-                |
               - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
                 = glyph('ok')
               - else
-                = progress(50)
+                - if property['comment'].present?
+                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}"
+                    = progress(50)
+                - else
+                  = progress(50)
             td
-              = property ? property['comment'] : ''
+              |
