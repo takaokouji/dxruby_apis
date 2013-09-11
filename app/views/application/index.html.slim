@@ -5,25 +5,19 @@ h2
   table.table class="table-bordered table-hover"
     thead
       tr
+        th rowspan="2"
+          |
         th
-          = t('.class')
-          | /
-          = t('.method')
+          h4 DXRuby
+        th colspan="3"
+          h4 dxruby_sdl
+      tr
         th
           | Windows
-          br
-          span.label class="label-info"
-            | DXRuby
         th
           | Mac
-          br
-          span.label class="label-success"
-            | dxruby_sdl
         th
           | Linux
-          br
-          span.label class="label-success"
-            | dxruby_sdl
         th
           = t('.feedback')
     tbody

@@ -13,8 +13,3 @@
 .table thead > tr {
   background-color: #f9f9f9;
 }
-
-.table thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
-}
