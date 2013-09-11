@@ -21,6 +21,7 @@ h2
         th width="30%"
           = t('.feedback')
     tbody
+      - num_methods = { windows: 0, mac: 0, linux: 0 }
       - tr_classes = ['success', 'warning', 'danger']
       - @dxruby_apis.each.with_index do |(klass, methods), i|
         - tr_class = tr_classes[i % tr_classes.length]
@@ -31,6 +32,7 @@ h2
             = t('.class')
         - methods.each do |method, property|
           - next if property && property['status'].try(:downcase) == 'removed'
+          - num_methods[:windows] += 1
           - method = '#' + method if /^\./ !~ method
           tr
             td
@@ -48,6 +50,7 @@ h2
                 - completed = false
               - elsif property['progress'].downcase == 'done'
                 = glyph('ok')
+                - num_methods[:mac] += 1
               - else
                 - if property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
@@ -55,12 +58,14 @@ h2
                 - else
                   = progress(50)
                 - completed = false
+                - num_methods[:mac] += 0.5
             td
               - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
                 = progress(0)
                 - completed = false
               - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
                 = glyph('ok')
+                - num_methods[:linux] += 1
               - else
                 - if property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
@@ -68,6 +73,7 @@ h2
                 - else
                   = progress(50)
                 - completed = false
+                - num_methods[:linux] += 0.5
             td
               - if completed
                 |
@@ -86,3 +92,19 @@ h2
                   - if (count = @feedback[method_name].try(:down) || 0) > 0
                     span.badge<
                       = count
+      tr.success
+        td
+          h4 ステータス
+        td
+          = progress(100)
+          | 100 %
+        td
+          - i = (num_methods[:mac] / num_methods[:windows].to_f * 100).to_i
+          = progress(i)
+          | #{i} %
+        td
+          - i = (num_methods[:linux] / num_methods[:windows].to_f * 100).to_i
+          = progress(i)
+          | #{i} %
+        td
+          |
