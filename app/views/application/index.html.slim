@@ -7,31 +7,39 @@ h2
       tr
         th
           = t('.class')
-        th
+          | /
           = t('.method')
         th
           | Windows
           br
-          | <small>(DXRuby)</small>
+          span.label class="label-info"
+            | DXRuby
         th
           | Mac
           br
-          | <small>(dxruby_sdl)</small>
+          span.label class="label-success"
+            | dxruby_sdl
         th
           | Linux
           br
-          | <small>(dxruby_sdl)</small>
+          span.label class="label-success"
+            | dxruby_sdl
         th
           = t('.comment')
     tbody
-      - @dxruby_apis.each do |klass, methods|
+      - tr_classes = ['success', 'warning', 'danger']
+      - @dxruby_apis.each.with_index do |(klass, methods), i|
+        - tr_class = tr_classes[i % tr_classes.length]
+        tr class="#{tr_class}"
+          td colspan="5"
+            = klass
+            = t('.class')
         - methods.each do |method, property|
           - next if property && property['status'].try(:downcase) == 'removed'
           - method = '#' + method if /^\./ !~ method
           tr
             td
               = klass
-            td
               = method
               - if property && property['version']
                 span.label< class="label-default"
