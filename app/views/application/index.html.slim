@@ -53,7 +53,7 @@ h2
                 = glyph('ok')
               - else
                 - if property['comment'].present?
-                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}"
+                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
                     = progress(50)
                 - else
                   = progress(50)
@@ -64,7 +64,7 @@ h2
                 = glyph('ok')
               - else
                 - if property['comment'].present?
-                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}"
+                  a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
                     = progress(50)
                 - else
                   = progress(50)
