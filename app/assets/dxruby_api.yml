@@ -11,21 +11,21 @@ Window:
   .draw_add:
   .draw_sub:
   .draw_ex:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   .draw_font:
     progress: wip
     comment: hash引数の:color以外は未対応
   .draw_font_ex:
-    version: 1.2.1~
+    version: '>= 1.2.1'
   .draw_morph:
-    version: 1.2.0~
+    version: '>= 1.2.0'
   .set_viewport:
-    version: ~1.2.0
+    version: '<= 1.2.0'
     status: removed
   .draw_tile:
-    version: 1.2.2~
+    version: '>= 1.2.2'
   .draw_line:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   .get_screen_shot:
   .get_load:
   .open_filename:
@@ -78,9 +78,9 @@ Window:
   .active?:
     .get_screen_modes:
   .discard:
-    version: 1.2.2~
+    version: '>= 1.2.2'
   .decide:
-    version: 1.2.2~
+    version: '>= 1.2.2'
 
 Input:
   .x:
@@ -119,27 +119,27 @@ Input:
   .pads:
   .update:
   .pad_num:
-    version: 1.2.2~
+    version: '>= 1.2.2'
   .pad_axis:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_lstick:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_rstick:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_pov:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_lx:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_ly:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_rx:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_ry:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_pov_x:
-    version: 1.4.0~
+    version: '>= 1.4.0'
   .pad_pov_y:
-    version: 1.4.0~
+    version: '>= 1.4.0'
 
 Image:
   .new:
@@ -148,7 +148,7 @@ Image:
     progress: wip
     comment: x, y, width, height引数は未対応
   .load_tiles:
-    version: 1.2.3~
+    version: '>= 1.2.3'
     aliases:
       - .load_to_array
       - .loadToArray
@@ -156,12 +156,12 @@ Image:
   .create_from_array:
   .load_from_file_in_memery:
   dispose:
-    version: 1.2.0~
+    version: '>= 1.2.0'
   delayed_dispose:
-    version: 1.2.1~
+    version: '>= 1.2.1'
     aliases:
   disposed?:
-    version: 1.2.2~
+    version: '>= 1.2.2'
   '[]':
   '[]=':
   compare:
@@ -173,32 +173,32 @@ Image:
   box_fill:
     progress: done
   circle:
-    version: 1.2.2~
+    version: '>= 1.2.2'
     progress: done
   circle_fill:
     progress: done
   triangle:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   triangle_fill:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   fill:
   clear:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   copy_rect:
   draw:
   draw_font:
   draw_font_ex:
-    version: 1.2.1~
+    version: '>= 1.2.1'
   save:
-    version: 1.2.3~
+    version: '>= 1.2.3'
   slice:
-    version: 1.2.2~
+    version: '>= 1.2.2'
     progress: done
   slice_tiles:
     aliases:
       - sliceToArray
       - slice_to_array
-    version: 1.2.3~
+    version: '>= 1.2.3'
   dup:
     aliases:
       - clone
@@ -210,26 +210,26 @@ Image:
     progress: done
   width=:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
   height=:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
   texture_x:
     aliases:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
   texture_x=:
     aliases:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
   texture_y:
     aliases:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
   texture_y=:
     aliases:
     status: removed
-    version: ~1.2.2
+    version: '<= 1.2.2'
 
 Sound:
   .new:
