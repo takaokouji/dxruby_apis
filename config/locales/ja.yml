@@ -1,0 +1,10 @@
+ja:
+  application:
+    index:
+      title: DXRuby API一覧
+      class: クラス
+      method: メソッド
+      comment: コメント
+      ok: ◯
+      wip: △
+      ng: ー

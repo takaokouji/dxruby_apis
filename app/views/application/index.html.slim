@@ -1,0 +1,48 @@
+h1
+  = t('.title')
+
+table
+  thead
+    tr
+      th
+        = t('.class')
+      th
+        = t('.method')
+      th Windows
+      th Mac
+      th Linux
+      th
+        = t('.comment')
+  tbody
+    - @dxruby_apis.each do |klass, methods|
+      - methods.each do |method, property|
+        tr
+          td
+            = klass
+          td
+            - if property && property['status'].try(:downcase) == 'removed'
+              span.removed
+                = method
+            - else
+                = method
+            - if property && property['version']
+              span.version<
+                = property['version']
+          td
+            = t('.ok')
+          td
+            - if !property || !property['progress']
+              = t('.ng')
+            - elsif property['progress'].downcase == 'done'
+              = t('.ok')
+            - else
+              = t('.wip')
+          td
+            - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
+              = t('.ng')
+            - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+              = t('.ok')
+            - else
+              = t('.wip')
+          td
+            = property ? property['comment'] : ''

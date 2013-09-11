@@ -29,6 +29,9 @@ Window:
   .get_screen_shot:
   .get_load:
   .open_filename:
+    progress: wip
+    linux_progress:
+    comment: Macは引数が未対応。Linuxは未実装
   .save_filename:
   .create:
   .sync:
