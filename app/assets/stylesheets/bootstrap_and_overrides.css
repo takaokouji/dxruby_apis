@@ -3,5 +3,18 @@
 
   Use Font Awesome icons (default)
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
-  =require twitter-bootstrap-static/sprites
+  =require twitter-bootstrap-static/fontawesome
   */
+
+.progress {
+  margin-bottom: 0;
+}
+
+.table thead > tr {
+  background-color: #f9f9f9;
+}
+
+.table thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}

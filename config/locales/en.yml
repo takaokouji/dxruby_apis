@@ -5,6 +5,3 @@ en:
       class: Class
       method: Method
       comment: Comment
-      ok: OK
-      wip: WIP
-      ng: '-'
