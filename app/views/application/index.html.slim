@@ -61,7 +61,7 @@
               - if mac_progress == 100
                 = glyph('ok')
               - else
-                - if property && property['comment'].present?
+                - if I18n.locale == :ja && property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
                     = progress(mac_progress)
                 - else
@@ -71,7 +71,7 @@
               - if linux_progress == 100
                 = glyph('ok')
               - else
-                - if property && property['comment'].present?
+                - if I18n.locale == :ja && property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
                     = progress(linux_progress)
                 - else
