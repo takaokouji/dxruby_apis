@@ -1,5 +1,5 @@
 DxrubyApis::Application.routes.draw do
-  root 'application#index', locale: I18n.default_locale
+  root 'application#index'
   post '/up', to: 'application#up', locale: I18n.default_locale
   post '/down', to: 'application#down', locale: I18n.default_locale
   get '/:locale/',to: 'application#index'
