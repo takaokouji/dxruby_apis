@@ -1,11 +1,16 @@
 module ApplicationHelper
   def progress(val)
-    if val == 100
-      css_class = 'success'
-    elsif val == 0
+    case val.to_i
+    when 0..24
+      css_class = 'danger'
+    when 25..49
       css_class = 'warning'
-    else
+    when 50..99
       css_class = 'info'
+    when 100
+      css_class = 'success'
+    else
+      css_class = ''
     end
     return content_tag(:div, 'class' => 'progress') {
       content_tag(:div, '',

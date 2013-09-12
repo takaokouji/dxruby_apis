@@ -41,6 +41,32 @@ class ApplicationController < ActionController::Base
       YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
   end
 
+  def num_methods
+    if !@num_methods
+      @num_methods = { windows: 0, mac: 0, linux: 0 }
+      dxruby_apis.each do |klass, methods|
+        methods.each do |method, property|
+          next if property && property['status'].try(:downcase) == 'removed'
+          @num_methods[:windows] += 1
+          if !property || !property['progress']
+          elsif property['progress'].downcase == 'done'
+            @num_methods[:mac] += 1
+          else
+            @num_methods[:mac] += 0.5
+          end
+          if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
+          elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+            @num_methods[:linux] += 1
+          else
+            @num_methods[:linux] += 0.5
+          end
+        end
+      end
+    end
+    return @num_methods
+  end
+  helper_method :num_methods
+
   def get_feedback(method_name)
     f = Feedback.where(method_name: params[:method_name]).first
     if !f
