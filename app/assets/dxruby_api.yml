@@ -3,7 +3,7 @@ Window:
   .loop:
     progress: done
   .draw:
-    progress: wip
+    progress: '75'
     comment: z引数は未対応
   .draw_scale:
   .draw_rot:
@@ -13,7 +13,7 @@ Window:
   .draw_ex:
     version: '>= 1.2.3'
   .draw_font:
-    progress: wip
+    progress: '75'
     comment: hash引数の:color以外は未対応
   .draw_font_ex:
     version: '>= 1.2.1'
@@ -29,8 +29,8 @@ Window:
   .get_screen_shot:
   .get_load:
   .open_filename:
-    progress: wip
-    linux_progress:
+    progress: '50'
+    linux_progress: wip
     comment: Macは引数が未対応。Linuxは未実装
   .save_filename:
   .create:
@@ -48,10 +48,10 @@ Window:
   .height:
     progress: done
   .width=:
-    progress: wip
+    progress: '75'
     comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
   .height=:
-    progress: wip
+    progress: '75'
     comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
   .caption:
     progress: done
@@ -84,10 +84,10 @@ Window:
 
 Input:
   .x:
-    progress: wip
+    progress: '90'
     comment: ゲームパッドは未対応
   .y:
-    progress: wip
+    progress: '90'
     comment: ゲームパッドは未対応
   .key_down?:
     progress: done
@@ -96,7 +96,7 @@ Input:
   .pad_down?:
     progress: done
   .pad_push?:
-    progress: wip
+    progress: '75'
     comment: ゲームパッドのボタンを押した瞬間だけでなく、押されている間はtrueを返してしまう
   .set_repeat:
     progress: done
@@ -145,7 +145,7 @@ Image:
   .new:
     progress: done
   .load:
-    progress: wip
+    progress: '50'
     comment: x, y, width, height引数は未対応
   .load_tiles:
     version: '>= 1.2.3'
