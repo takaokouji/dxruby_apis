@@ -4,15 +4,21 @@
       = t('.title')
     .library_status
       p
-        | Windows / DXRuby (#{100}%)
+        a href="http://dxruby.sourceforge.jp/" target="_blank"
+          | Windows / DXRuby (#{100}%)  
+          = glyph(:globe)
       = progress(100)
       - i = (num_methods[:mac] / num_methods[:windows].to_f * 100).to_i
       p
-        | Mac / dxruby_sdl (#{i}%)
+        a href="https://github.com/takaokouji/dxruby_sdl/" target="_blank"
+          | Mac / dxruby_sdl (#{i}%)  
+          = glyph(:globe)
       = progress(i)
       - i = (num_methods[:linux] / num_methods[:windows].to_f * 100).to_i
       p
-        | Linux / dxruby_sdl (#{i}%)
+        a href="https://github.com/takaokouji/dxruby_sdl/" target="_blank"
+          | Linux / dxruby_sdl (#{i}%)  
+          = glyph(:globe)
       = progress(i)
 
 .table-responsive
