@@ -60,6 +60,9 @@
             td
               - if mac_progress == 100
                 = glyph('ok')
+                - if property && property['since']
+                  span.label< class="label-default"
+                    = '>= ' + property['since'].to_s
               - else
                 - if I18n.locale == :ja && property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
@@ -70,6 +73,9 @@
             td
               - if linux_progress == 100
                 = glyph('ok')
+                - if property && property['since']
+                  span.label< class="label-default"
+                    = '>= ' + property['since'].to_s
               - else
                 - if I18n.locale == :ja && property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"

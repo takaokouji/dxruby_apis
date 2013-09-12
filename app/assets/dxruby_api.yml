@@ -2,6 +2,7 @@
 Window:
   .loop:
     progress: done
+    since: 0.0.1
   .draw:
     progress: 75
     comment: z引数は未対応
@@ -45,8 +46,10 @@ Window:
   .y=:
   .width:
     progress: done
+    since: 0.0.4
   .height:
     progress: done
+    since: 0.0.4
   .width=:
     progress: 75
     comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
@@ -55,8 +58,10 @@ Window:
     comment: 設定する前にImageオブジェクトを生成すると設定内容が反映されない
   .caption:
     progress: done
+    since: 0.0.4
   .caption=:
     progress: done
+    since: 0.0.4
   .scale=:
     progress: wip
     comment: 設定内容が反映されない
@@ -66,6 +71,7 @@ Window:
   .fps:
   .fps=:
     progress: done
+    since: 0.0.3
   .frameskip?:
   .frameskip=:
   .bgcolor:
@@ -91,27 +97,35 @@ Input:
     comment: ゲームパッドは未対応
   .key_down?:
     progress: done
+    since: 0.0.4
   .key_push?:
     progress: done
+    since: 0.0.4
   .pad_down?:
     progress: done
+    since: 0.0.2
   .pad_push?:
     progress: 75
     comment: ゲームパッドのボタンを押した瞬間だけでなく、押されている間はtrueを返してしまう
   .set_repeat:
     progress: done
+    since: 0.0.4
   .set_key_repeat:
   .set_pad_repeat:
   .set_config:
   .mouse_pos_x:
     progress: done
+    since: 0.0.2
   .mouse_pos_y:
     progress: done
+    since: 0.0.2
   .set_mouse_pos:
   .mouse_down?:
     progress: done
+    since: 0.0.3
   .mouse_push?:
     progress: done
+    since: 0.0.3
   .mouse_wheel_pos:
   .mouse_wheel_pos=:
   .mouse_enable:
@@ -144,6 +158,7 @@ Input:
 Image:
   .new:
     progress: done
+    since: 0.0.1
   .load:
     progress: 50
     comment: x, y, width, height引数は未対応
@@ -153,6 +168,7 @@ Image:
       - .load_to_array
       - .loadToArray
     progress: done
+    since: 0.0.2
   .create_from_array:
   .load_from_file_in_memery:
   dispose:
@@ -165,18 +181,24 @@ Image:
   '[]':
   '[]=':
   compare:
-    progress: done
+    progress: 80
+    comment: テストコードが未実装
   line:
     progress: done
+    since: 0.0.1
   box:
     progress: done
+    since: 0.0.1
   box_fill:
     progress: done
+    since: 0.0.3
   circle:
     version: '>= 1.2.2'
     progress: done
+    since: 0.0.1
   circle_fill:
     progress: done
+    since: 0.0.3
   triangle:
     version: '>= 1.2.3'
   triangle_fill:
@@ -194,6 +216,7 @@ Image:
   slice:
     version: '>= 1.2.2'
     progress: done
+    since: 0.0.2
   slice_tiles:
     aliases:
       - sliceToArray
@@ -203,11 +226,14 @@ Image:
     aliases:
       - clone
   set_color_key:
-    progress: done
+    progress: 80
+    comment: テストコードが未実装
   width:
     progress: done
+    since: 0.0.1
   height:
     progress: done
+    since: 0.0.1
   width=:
     status: removed
     version: '<= 1.2.2'
@@ -234,12 +260,14 @@ Image:
 Sound:
   .new:
     progress: done
+    since: 0.0.2
   dispose:
     version: '>= 1.2.0'
   disposed?:
     version: '>= 1.2.2'
   play:
     progress: done
+    since: 0.0.2
   start=:
   loop_start=:
   loop_end=:
@@ -279,6 +307,7 @@ Font:
   get_width:
   size:
     progress: done
+    since: 0.0.1
   fontname:
     version: '>= 1.2.1'
   italic:
@@ -336,6 +365,7 @@ Shader:
 Sprite:
   .new:
     progress: done
+    since: 0.0.5
   .check:
     progress: 80
     comment: テストコードが未実装
@@ -359,11 +389,13 @@ Sprite:
     comment: テストコードが未実装
   x:
     progress: done
+    since: 0.0.5
   x=:
     progress: 80
     comment: テストコードが未実装
   y:
     progress: done
+    since: 0.0.5
   y=:
     progress: 80
     comment: テストコードが未実装
@@ -423,6 +455,7 @@ Sprite:
     comment: テストコードが未実装
   image:
     progress: done
+    since: 0.0.5
   image=:
     progress: 80
     comment: テストコードが未実装
