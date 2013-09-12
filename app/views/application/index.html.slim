@@ -89,14 +89,16 @@
                 - method_name = klass + method
                 button.btn class="btn-xs btn-success" type="button" onclick="event.preventDefault(); sendFeedback(this, 'up', '#{method_name}')"
                   = glyph('thumbs-up')
-                  |  I want it!
+                  |  
+                  = t('.i_want_it')
                   - if (count = @feedback[method_name].try(:up) || 0) > 0
                     span.badge<
                       = count
                 |　
                 button.btn< class="btn-xs btn-danger" type="button" onclick="event.preventDefault(); sendFeedback(this, 'down', '#{method_name}')"
                   = glyph('thumbs-down')
-                  |  No thanks.
+                  |  
+                  = t('.no_thanks')
                   - if (count = @feedback[method_name].try(:down) || 0) > 0
                     span.badge<
                       = count
