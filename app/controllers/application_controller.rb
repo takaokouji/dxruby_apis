@@ -36,10 +36,56 @@ class ApplicationController < ActionController::Base
 
   private
 
+  AVAILABLE_LOCALES = ['ja', 'en']
+  private_constant :AVAILABLE_LOCALES
+
+  def default_url_options(options = {})
+    return { locale: I18n.locale }
+  end
+
+  def set_locale
+    locale = (params[:locale] || I18n.default_locale).to_s
+    if !AVAILABLE_LOCALES.include?(locale)
+      redirect_to File.join(root_path, I18n.default_locale.to_s, '')
+      return
+    end
+
+    if request.path == '/'
+      redirect_to File.join(root_path, locale, '')
+    else
+      I18n.locale = locale
+    end
+  end
+
   def dxruby_apis
     return @dxruby_apis ||=
       YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
   end
+
+  def calc_progress(property)
+    if !property || !property['progress']
+      mac_progress = 0
+    elsif property['progress'].downcase == 'done'
+      mac_progress = 100
+    else
+      mac_progress = property['progress'].to_i
+      if mac_progress == 0
+        mac_progress = 10
+      end
+    end
+    if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
+      linux_progress = 0
+    elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+      linux_progress = 100
+    else
+      linux_progress = (property['linux_progress'] || property['progress']).to_i
+      if linux_progress == 0
+        linux_progress = 10
+      end
+    end
+    return mac_progress, linux_progress
+  end
+  helper_method :calc_progress
 
   def num_methods
     if !@num_methods
@@ -48,18 +94,9 @@ class ApplicationController < ActionController::Base
         methods.each do |method, property|
           next if property && property['status'].try(:downcase) == 'removed'
           @num_methods[:windows] += 1
-          if !property || !property['progress']
-          elsif property['progress'].downcase == 'done'
-            @num_methods[:mac] += 1
-          else
-            @num_methods[:mac] += 0.5
-          end
-          if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
-          elsif (property['linux_progress'] || property['progress']).downcase == 'done'
-            @num_methods[:linux] += 1
-          else
-            @num_methods[:linux] += 0.5
-          end
+          mac_progress, linux_progress = *calc_progress(property)
+          @num_methods[:mac] += mac_progress / 100.to_f
+          @num_methods[:linux] += linux_progress / 100.to_f
         end
       end
     end
@@ -79,26 +116,5 @@ class ApplicationController < ActionController::Base
       end
     end
     return f
-  end
-
-  def default_url_options(options = {})
-    return { locale: I18n.locale }
-  end
-
-  AVAILABLE_LOCALES = ['ja', 'en']
-  private_constant :AVAILABLE_LOCALES
-
-  def set_locale
-    locale = (params[:locale] || I18n.default_locale).to_s
-    if !AVAILABLE_LOCALES.include?(locale)
-      redirect_to File.join(root_path, I18n.default_locale.to_s, '')
-      return
-    end
-
-    if request.path == '/'
-      redirect_to File.join(root_path, locale, '')
-    else
-      I18n.locale = locale
-    end
   end
 end

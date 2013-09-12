@@ -46,6 +46,7 @@
         - methods.each do |method, property|
           - next if property && property['status'].try(:downcase) == 'removed'
           - method = '#' + method if /^\./ !~ method
+          - mac_progress, linux_progress = *calc_progress(property)
           tr
             td
               = klass
@@ -57,30 +58,24 @@
               = glyph('ok')
             - completed = true
             td
-              - if !property || !property['progress']
-                = progress(0)
-                - completed = false
-              - elsif property['progress'].downcase == 'done'
+              - if mac_progress == 100
                 = glyph('ok')
               - else
-                - if property['comment'].present?
+                - if property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
-                    = progress(50)
+                    = progress(mac_progress)
                 - else
-                  = progress(50)
+                  = progress(mac_progress)
                 - completed = false
             td
-              - if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
-                = progress(0)
-                - completed = false
-              - elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+              - if linux_progress == 100
                 = glyph('ok')
               - else
-                - if property['comment'].present?
+                - if property && property['comment'].present?
                   a.has-tooltip href="#" data-toggle="tooltip" title="#{h property['comment']}" onclick="event.preventDefault();"
-                    = progress(50)
+                    = progress(linux_progress)
                 - else
-                  = progress(50)
+                  = progress(linux_progress)
                 - completed = false
             td
               - if completed

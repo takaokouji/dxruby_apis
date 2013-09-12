@@ -1,9 +1,9 @@
 module ApplicationHelper
   def progress(val)
     case val.to_i
-    when 0..24
+    when 0..14
       css_class = 'danger'
-    when 25..49
+    when 15..49
       css_class = 'warning'
     when 50..99
       css_class = 'info'
