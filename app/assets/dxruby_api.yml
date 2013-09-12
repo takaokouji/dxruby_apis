@@ -251,15 +251,214 @@ Sound:
 
 SoundEffect:
   .new:
+    progress: wip
+    comment: インタフェースのみ
+  dispose:
+    version: '>= 1.2.0'
+  disposed?:
+    version: '>= 1.2.2'
+  add:
+    progress: wip
+    comment: インタフェースのみ
+  play:
+    progress: wip
+    comment: インタフェースのみ
+  stop:
+    progress: wip
+    comment: インタフェースのみ
 
 Font:
   .new:
+    progress: 50
+    comment: hash引数が未対応
+  install:
+  dispose:
+    version: '>= 1.2.0'
+  disposed?:
+    version: '>= 1.2.2'
+  get_width:
+  size:
+    progress: done
+  fontname:
+    version: '>= 1.2.1'
+  italic:
+    version: '>= 1.2.1'
+  weight:
+    version: '>= 1.2.1'
 
 RenderTarget:
   .new:
+  dispose:
+    version: '>= 1.2.0'
+  disposed?:
+    version: '>= 1.2.2'
+  draw:
+  draw_scale:
+  draw_rot:
+  draw_alpha:
+  draw_add:
+  draw_sub:
+  draw_ex:
+    version: '>= 1.2.3'
+  draw_font:
+  .draw_font_ex:
+    version: '>= 1.2.1'
+  draw_morph:
+  draw_tile:
+    version: '>= 1.2.2'
+  draw_line:
+    version: '>= 1.2.3'
+  update:
+  width:
+  height:
+  bgcolor:
+  bgcolor=:
+  min_filter:
+  mag_filter:
+  min_filter=:
+  mag_filter=:
+  to_image:
+  discard:
+    version: '>= 1.2.2'
+  decide:
+    version: '>= 1.2.2'
 
 Shader:
   .new:
+  technigue:
+  technigue=:
+  '各種Setter/Getter':
+
+'Shader::Core':
+  .new:
+  dispose:
 
 Sprite:
   .new:
+    progress: done
+  .check:
+    progress: 80
+    comment: テストコードが未実装
+  .update:
+    progress: 80
+    comment: テストコードが未実装
+  .draw:
+    progress: 80
+    comment: テストコードが未実装
+  .clean:
+    progress: 80
+    comment: テストコードが未実装
+  draw:
+    progress: 80
+    comment: テストコードが未実装
+  ===:
+    progress: 80
+    comment: テストコードが未実装
+  check:
+    progress: 80
+    comment: テストコードが未実装
+  x:
+    progress: done
+  x=:
+    progress: 80
+    comment: テストコードが未実装
+  y:
+    progress: done
+  y=:
+    progress: 80
+    comment: テストコードが未実装
+  z:
+    progress: 80
+    comment: テストコードが未実装
+  z=:
+    progress: 80
+    comment: テストコードが未実装
+  angle:
+    progress: 80
+    comment: テストコードが未実装
+  angle=:
+    progress: 80
+    comment: テストコードが未実装
+  scale_x:
+    progress: 80
+    comment: テストコードが未実装
+  scale_x=:
+    progress: 80
+    comment: テストコードが未実装
+  scale_y:
+    progress: 80
+    comment: テストコードが未実装
+  scale_y=:
+    progress: 80
+    comment: テストコードが未実装
+  center_x:
+    progress: 80
+    comment: テストコードが未実装
+  center_x=:
+    progress: 80
+    comment: テストコードが未実装
+  center_y:
+    progress: 80
+    comment: テストコードが未実装
+  center_y=:
+    progress: 80
+    comment: テストコードが未実装
+  alpha:
+    progress: 80
+    comment: テストコードが未実装
+  alpha=:
+    progress: 80
+    comment: テストコードが未実装
+  blend:
+    progress: 80
+    comment: テストコードが未実装
+  blend=:
+    progress: 80
+    comment: テストコードが未実装
+  shader:
+    progress: 80
+    comment: テストコードが未実装
+  shader=:
+    progress: 80
+    comment: テストコードが未実装
+  image:
+    progress: done
+  image=:
+    progress: 80
+    comment: テストコードが未実装
+  target:
+    progress: 80
+    comment: テストコードが未実装
+  target=:
+    progress: 80
+    comment: テストコードが未実装
+  collision:
+    progress: 80
+    comment: テストコードが未実装
+  collision=:
+    progress: 80
+    comment: テストコードが未実装
+  collision_enable:
+    progress: 80
+    comment: テストコードが未実装
+  collision_enable=:
+    progress: 80
+    comment: テストコードが未実装
+  collision_sync:
+    progress: 80
+    comment: テストコードが未実装
+  collision_sync=:
+    progress: 80
+    comment: テストコードが未実装
+  visible:
+    progress: 80
+    comment: テストコードが未実装
+  visible=:
+    progress: 80
+    comment: テストコードが未実装
+  vanish:
+    progress: 80
+    comment: テストコードが未実装
+  vanished?:
+    progress: 80
+    comment: テストコードが未実装
