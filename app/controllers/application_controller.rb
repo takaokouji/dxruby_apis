@@ -6,8 +6,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
+  @@dxruby_apis = nil
+  @@num_methods = nil
+
   def index
-    @dxruby_apis = YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
     @feedback = {}
     Feedback.all.each do |f|
       @feedback[f.method_name] = f
@@ -58,9 +60,10 @@ class ApplicationController < ActionController::Base
   end
 
   def dxruby_apis
-    return @dxruby_apis ||=
+    return @@dxruby_apis ||=
       YAML.load(Rails.root.join('app/assets/dxruby_api.yml').read)
   end
+  helper_method :dxruby_apis
 
   def calc_progress(property)
     if !property || !property['progress']
@@ -88,19 +91,19 @@ class ApplicationController < ActionController::Base
   helper_method :calc_progress
 
   def num_methods
-    if !@num_methods
-      @num_methods = { windows: 0, mac: 0, linux: 0 }
+    if !@@num_methods
+      @@num_methods = { windows: 0, mac: 0, linux: 0 }
       dxruby_apis.each do |klass, methods|
         methods.each do |method, property|
           next if property && property['status'].try(:downcase) == 'removed'
-          @num_methods[:windows] += 1
+          @@num_methods[:windows] += 1
           mac_progress, linux_progress = *calc_progress(property)
-          @num_methods[:mac] += mac_progress / 100.to_f
-          @num_methods[:linux] += linux_progress / 100.to_f
+          @@num_methods[:mac] += mac_progress / 100.to_f
+          @@num_methods[:linux] += linux_progress / 100.to_f
         end
       end
     end
-    return @num_methods
+    return @@num_methods
   end
   helper_method :num_methods
 

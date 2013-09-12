@@ -42,7 +42,7 @@
           = t('.feedback')
     tbody
       - tr_classes = ['warning']
-      - @dxruby_apis.each.with_index do |(klass, methods), i|
+      - dxruby_apis.each.with_index do |(klass, methods), i|
         - tr_class = tr_classes[i % tr_classes.length]
         tr class="#{tr_class}"
           td colspan="5"
