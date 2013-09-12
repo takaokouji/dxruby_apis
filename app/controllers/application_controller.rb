@@ -65,7 +65,7 @@ class ApplicationController < ActionController::Base
   def calc_progress(property)
     if !property || !property['progress']
       mac_progress = 0
-    elsif property['progress'].downcase == 'done'
+    elsif property['progress'].to_s.downcase == 'done'
       mac_progress = 100
     else
       mac_progress = property['progress'].to_i
@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
     end
     if !property || (property.key?('linux_progress') && !property['linux_progress']) || !property['progress']
       linux_progress = 0
-    elsif (property['linux_progress'] || property['progress']).downcase == 'done'
+    elsif (property['linux_progress'] || property['progress']).to_s.downcase == 'done'
       linux_progress = 100
     else
       linux_progress = (property['linux_progress'] || property['progress']).to_i
