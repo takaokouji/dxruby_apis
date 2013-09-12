@@ -13,3 +13,12 @@
 .table thead > tr {
   background-color: #f9f9f9;
 }
+
+button.btn-success > span.badge {
+  background-color: #398439;
+}
+
+button.btn-danger > span.badge {
+  background-color: #d43f3a;
+}
+
