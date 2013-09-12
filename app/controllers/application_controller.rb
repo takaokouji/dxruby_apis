@@ -59,11 +59,20 @@ class ApplicationController < ActionController::Base
     return { locale: I18n.locale }
   end
 
+  AVAILABLE_LOCALES = ['ja', 'en']
+  private_constant :AVAILABLE_LOCALES
+
   def set_locale
-    if request.path == '/'
-      redirect_to File.join(root_path,
-                            (params[:locale] || I18n.default_locale).to_s, '')
+    locale = (params[:locale] || I18n.default_locale).to_s
+    if !AVAILABLE_LOCALES.include?(locale)
+      redirect_to File.join(root_path, I18n.default_locale.to_s, '')
+      return
     end
-    I18n.locale = params[:locale] || I18n.default_locale
+
+    if request.path == '/'
+      redirect_to File.join(root_path, locale, '')
+    else
+      I18n.locale = locale
+    end
   end
 end
