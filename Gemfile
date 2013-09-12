@@ -54,3 +54,5 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails',
 group :development, :test do
   gem 'rspec-rails'
 end
+
+gem 'newrelic_rpm'
