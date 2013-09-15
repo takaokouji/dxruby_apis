@@ -13,6 +13,8 @@ Window:
   .draw_sub:
   .draw_ex:
     version: '>= 1.2.3'
+    progress: 25
+    comment: hash引数のalpha、blend、zが未実装
   .draw_font:
     progress: 75
     comment: hash引数の:color以外は未対応
@@ -382,7 +384,7 @@ Sprite:
     progress: 25
     comment: angleなどの設定反映、テストコードが未実装
   ===:
-    progress: 25
+    progress: 50
     comment: angleなどの設定反映、テストコードが未実装
   check:
     progress: done
