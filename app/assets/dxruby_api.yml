@@ -379,119 +379,119 @@ Sprite:
     progress: 80
     comment: テストコードが未実装
   draw:
-    progress: 80
-    comment: テストコードが未実装
+    progress: 25
+    comment: angleなどの設定反映、テストコードが未実装
   ===:
-    progress: 80
-    comment: テストコードが未実装
+    progress: 25
+    comment: angleなどの設定反映、テストコードが未実装
   check:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   x:
     progress: done
     since: 0.0.5
   x=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   y:
     progress: done
     since: 0.0.5
   y=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   z:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   z=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   angle:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   angle=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   scale_x:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   scale_x=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   scale_y:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   scale_y=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   center_x:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   center_x=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   center_y:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   center_y=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   alpha:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   alpha=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   blend:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   blend=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   shader:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   shader=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   image:
     progress: done
     since: 0.0.5
   image=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   target:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   target=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision_enable:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision_enable=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision_sync:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   collision_sync=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   visible:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   visible=:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   vanish:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   vanished?:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
