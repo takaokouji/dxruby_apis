@@ -369,8 +369,8 @@ Sprite:
     progress: done
     since: 0.0.5
   .check:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   .update:
     progress: 80
     comment: テストコードが未実装
