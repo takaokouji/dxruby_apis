@@ -211,6 +211,8 @@ Image:
   copy_rect:
   draw:
   draw_font:
+    progress: done
+    since: 0.0.5
   draw_font_ex:
     version: '>= 1.2.1'
   save:
