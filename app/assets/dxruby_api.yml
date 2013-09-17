@@ -309,6 +309,8 @@ Font:
   disposed?:
     version: '>= 1.2.2'
   get_width:
+    progress: done
+    since: 0.0.5
   size:
     progress: done
     since: 0.0.1
