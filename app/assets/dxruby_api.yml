@@ -132,6 +132,8 @@ Input:
   .mouse_wheel_pos=:
   .mouse_enable:
   .keys:
+    progress: done
+    since: 0.0.5
   .pads:
   .update:
   .pad_num:
