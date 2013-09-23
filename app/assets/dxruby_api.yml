@@ -378,14 +378,14 @@ Sprite:
     progress: done
     since: 0.0.5
   .update:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   .draw:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   .clean:
-    progress: 80
-    comment: テストコードが未実装
+    progress: done
+    since: 0.0.5
   draw:
     progress: 25
     comment: angleなどの設定反映、テストコードが未実装
